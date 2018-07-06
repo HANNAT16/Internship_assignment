@@ -1,0 +1,44 @@
+<html>
+   <head>
+      <title>
+        Remainder App
+      </title>
+      <style>
+         body{
+         background-image: url("https://wallpapertag.com/wallpaper/full/1/a/1/350829-widescreen-website-background-1920x1080-windows-xp.jpg");
+         background-size: 100%;
+         }
+      </style>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   </head>
+   <body>
+      <br><br><br><br>
+      <div class="container">
+         <table class="table table-hover">
+            <th>ID</th>
+            <th>Remainder</th>
+            <th>Date</th>
+            {% for row in data %}
+            <tr>
+               {% for d in row %}
+               <td>{{ d }}</td>
+               {% endfor %}
+            </tr>
+            {% endfor %}
+         </table>
+         <br><br>
+         <center>
+            <form action="/add_page" id="add_remainder">
+               <input type="submit" value="Add" class="btn btn-primary">
+            </form>
+                       <form action="/update_page" id="update_remainder">
+               <input type="submit" value="Update" class="btn btn-primary">
+            </form>
+         </center>
+      </div>
+   </body>
+</html>

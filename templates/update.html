@@ -1,0 +1,65 @@
+<html>
+   <head>
+      <title>
+         Reminder App
+      </title>
+      <style>
+         body{
+         background-image: url("https://wallpapertag.com/wallpaper/full/1/a/1/350829-widescreen-website-background-1920x1080-windows-xp.jpg");
+         background-size: 100%;
+         }
+         a {
+         text-decoration: none;
+         display: inline-block;
+         padding: 8px 16px;
+         }
+         a:hover {
+         background-color: #ddd;
+         color: black;
+         }
+         .previous {
+         background-color: #f1f1f1;
+         color: black;
+         }
+         .next {
+         background-color: #4CAF50;
+         color: white;
+         }
+         .round {
+         border-radius: 50%;
+         }
+      </style>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   </head>
+   <body>
+      <br><br><br><br><br><br><br>
+      <div class="container">
+         <a href="/" class="previous round">&#8249;</a><br><br>
+         <form class="form-inline" action="/update" method="post">
+            <div class="form-group">
+               <label for="reminder_id">Reminder Id</label>               
+               <select name="id" class="form-control">
+                  {% for row in data %}
+                  {% for d in row %}
+                  <option value="{{d}}">{{d}}</option>
+                  {% endfor %}
+                  {% endfor %}
+               </select>
+               <br><br>      
+               <label for="reminder_name">Reminder Name</label>
+               <input type="text" name="name" class="form-control"><br><br>
+               <label for="reminder_date_time">Reminder Date</label>
+               <input type="date" name="date" class="form-control" />
+               <script src="jQuery.ui.datepicker.js"></script>
+               <script src="jquery.ui.datepicker.mobile.js"></script>
+            </div>
+            <br><br>
+            <button type="submit" class="btn btn-primary" value="Update">Update</button>
+         </form>
+      </div>
+   </body>
+</html>
